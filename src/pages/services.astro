@@ -1,0 +1,34 @@
+---
+import Menu from "../components/Menu.astro";
+import CardService from "../components/CardService.astro";
+import TitlePage from "../components/TitlePage.astro";
+
+const services = [
+  {
+    title: "Web Development",
+    des: "Create responsive and dynamic websites using modern frameworks and technologies. Optimize for performance and user experience across all devices and browsers.",
+  },
+  {
+    title: "Mobile Development",
+    des: "Build native and cross-platform mobile applications for iOS and Android. Implement user-friendly interfaces and integrate with device features for seamless functionality.",
+  },
+  {
+    title: "Desktop Development",
+    des: "Develop powerful desktop applications for Windows, macOS, and Linux. Create intuitive user interfaces and leverage system resources for high-performance software solutions.",
+  },
+];
+---
+
+<Menu />
+<section class="bg-gray-200 pt-20 pb-28 px-8">
+  <div class="max-w-6xl mx-auto">
+    <TitlePage title="Services" subtitle="Here's what I offer" />
+    <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+      {
+        services.map((service) => (
+          <CardService title={service.title} desc={service.des} />
+        ))
+      }
+    </div>
+  </div>
+</section>
